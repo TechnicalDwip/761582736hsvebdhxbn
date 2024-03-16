@@ -12,3 +12,5 @@ async def request_movie(bot, update):
         movie_name = ' '.join(update.command[1:])
         owner_message = f"New movie request: {movie_name}"
         await bot.send_message(OWNER_ID, owner_message)
+
+client.run()
