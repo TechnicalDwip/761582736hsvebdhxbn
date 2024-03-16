@@ -135,8 +135,8 @@ async def next_page(bot, query):
             ]
                   )
         btn.insert(0, [
-            [InlineKeyboardButton("🔺 Cʜᴏᴏsᴇ Lᴀɴɢᴜᴀɢᴇ 🔻", callback_data=f"languages#{key}"),
-            [InlineKeyboardButton("♻️ Cʜᴏᴏsᴇ ♻️", "select"), InlineKeyboardButton("❗Sᴇɴᴅ Aʟʟ ❗", callback_data=f"sendfiles#{key}")]
+            [InlineKeyboardButton("🔺 ভাষা নির্বাচন করুন 🔻", callback_data=f"languages#{key}")],
+            [InlineKeyboardButton("♻️ নির্বাচন করুন ♻️", "select"), InlineKeyboardButton("❗সব পাঠান ❗", callback_data=f"sendfiles#{key}")]
         ])
     else:
         btn = []
@@ -146,8 +146,8 @@ async def next_page(bot, query):
             ]
                   )
         btn.insert(0, [
-            [InlineKeyboardButton("🔺 Cʜᴏᴏsᴇ Lᴀɴɢᴜᴀɢᴇ 🔻", callback_data=f"languages#{key}"),
-            [InlineKeyboardButton("♻️ Cʜᴏᴏsᴇ ♻️", "select"), InlineKeyboardButton("❗Sᴇɴᴅ Aʟʟ ❗", callback_data=f"sendfiles#{key}")]
+            [InlineKeyboardButton("🔺 ভাষা নির্বাচন করুন 🔻", callback_data=f"languages#{key}")],
+            [InlineKeyboardButton("♻️ নির্বাচন করুন ♻️", "select"), InlineKeyboardButton("❗সব পাঠান ❗", callback_data=f"sendfiles#{key}")]
         ])
     try:
         if settings['max_btn']:
