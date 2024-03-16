@@ -165,11 +165,18 @@ async def start(client, message):
                     protect_content=msg.get('protect', False),
                     reply_markup=InlineKeyboardMarkup(
                         [
-                            [InlineKeyboardButton('Movie Channel', url="https://t.me/+8KKO8_lJaJAxNDk9")
+                            [
+                                InlineKeyboardButton('Movie Group', url=f'http://t.me/SwiftHornRequest'),
+                                InlineKeyboardButton('Movie Channel', url="https://t.me/+8KKO8_lJaJAxNDk9")
                             ],[
-                                InlineKeyboardButton('🚀 Stream & Download', callback_data=f'generate_stream_link:{file_id}')
-                            ]]
+                                InlineKeyboardButton('Developer', url="https://t.me/royaldwip")
+                            ],
+                            [
+                                InlineKeyboardButton('🚀 Fast Download / Watch Online🖥️', callback_data=f'generate_stream_link:{file_id}') #Don't change anything without contacting me @LazyDeveloperr
+                            ]
+                        ]
                     )
+                )
             except FloodWait as e:
                 await asyncio.sleep(e.x)
                 logger.warning(f"Floodwait of {e.x} sec.")
@@ -180,11 +187,17 @@ async def start(client, message):
                     protect_content=msg.get('protect', False),
                     reply_markup=InlineKeyboardMarkup(
                         [
-                            [InlineKeyboardButton('Movie Channel', url="https://t.me/+8KKO8_lJaJAxNDk9")
-                            ],[
-                                InlineKeyboardButton('🚀 Stream & Download', callback_data=f'generate_stream_link:{file_id}')
-                            ]]
+                         [
+                          InlineKeyboardButton('Movie Group', url=f'http://t.me/SwiftHornRequest'),
+                          InlineKeyboardButton('Movie Channel', url="https://t.me/+8KKO8_lJaJAxNDk9")
+                       ],[
+                          InlineKeyboardButton("Developer", url="t.me/royaldwip")
+                         ],[ 
+                            InlineKeyboardButton('🚀 Fast Download / Watch Online 🖥️', callback_data=f'generate_stream_link:{file_id}') #Don't change anything without contacting me @LazyDeveloperr
+                            ]
+                        ]
                     )
+                )
             except Exception as e:
                 logger.warning(e, exc_info=True)
                 continue
@@ -333,11 +346,19 @@ async def start(client, message):
                 protect_content=True if pre == 'filep' else False,
                 reply_markup=InlineKeyboardMarkup(
                     [
-                        [InlineKeyboardButton('Movie Channel', url="https://t.me/+8KKO8_lJaJAxNDk9")
-                        ],[
-                            InlineKeyboardButton('🚀 Stream & Download', callback_data=f'generate_stream_link:{file_id}')
-                        ]]
+                     [
+                      InlineKeyboardButton('Movie Group', url=f'http://t.me/SwiftHornRequest'),
+                      InlineKeyboardButton('Movie Channel', url="https://t.me/+8KKO8_lJaJAxNDk9")
+                   ],[
+                      InlineKeyboardButton("Developer", url="t.me/royaldwip")
+                     ],
+                     [
+                        InlineKeyboardButton('🚀 Fast Download / Watch Online🖥️', callback_data=f'generate_stream_link:{file_id}') #Don't change anything without contacting me @LazyDeveloperr
+
+                     ]
+                    ]
                 )
+            )
             filesarr.append(msg)
         k = await client.send_message(chat_id = message.from_user.id, text=f"<b>Above Files Will be delete in 10min (Due to Copyright Issues)")
         await asyncio.sleep(600)
@@ -391,11 +412,18 @@ async def start(client, message):
                 protect_content=True if pre == 'filep' else False,
                 reply_markup=InlineKeyboardMarkup(
                     [
-                        [InlineKeyboardButton('Movie Channel', url="https://t.me/+8KKO8_lJaJAxNDk9")
-                        ],[
-                            InlineKeyboardButton('🚀 Stream & Download', callback_data=f'generate_stream_link:{file_id}')
-                        ]]
+                     [
+                      InlineKeyboardButton('Movie Group', url=f'http://t.me/SwiftHornRequest'),
+                      InlineKeyboardButton('Movie Channel', url="https://t.me/+8KKO8_lJaJAxNDk9")
+                   ],[
+                      InlineKeyboardButton("Developer", url="t.me/royaldwip")
+                     ],
+                     [
+                        InlineKeyboardButton('🚀 Fast Download / Watch Online🖥️', callback_data=f'generate_stream_link:{file_id}') #Don't change anything without contacting me @LazyDeveloperr
+                     ]
+                    ]
                 )
+            )
             filetype = msg.media
             file = getattr(msg, filetype.value)
             title = '@SwiftHornCinema' + ' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), file.file_name.split()))
@@ -419,7 +447,7 @@ async def start(client, message):
             pass
         return await message.reply('No such file exist.')
     files = files_[0]
-    title = '@SwiftHornCinema  ' + ' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), files.file_name.split()))
+    title = '@VJ_Bots  ' + ' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), files.file_name.split()))
     size=get_size(files.file_size)
     f_caption=files.caption
     if CUSTOM_FILE_CAPTION:
@@ -447,11 +475,18 @@ async def start(client, message):
         protect_content=True if pre == 'filep' else False,
         reply_markup=InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton('Movie Channel', url="https://t.me/+8KKO8_lJaJAxNDk9")
-                ],[
-                    InlineKeyboardButton('🚀 Stream & Download', callback_data=f'generate_stream_link:{file_id}')
-                ]]
+             [
+              InlineKeyboardButton('Movie Group', url=f'http://t.me/SwiftHornRequest'),
+              InlineKeyboardButton('Movie Channel', url="https://t.me/+8KKO8_lJaJAxNDk9")
+           ],[
+              InlineKeyboardButton("Developer", url="t.me/royaldwip")
+             ],
+             [
+              InlineKeyboardButton('🚀 Fast Download / Watch Online🖥️', callback_data=f'generate_stream_link:{file_id}') #Don't change anything without contacting me @LazyDeveloperr
+             ]
+            ]
         )
+    )
     btn = [[
         InlineKeyboardButton("Get File Again", callback_data=f'delfile#{file_id}')
     ]]
