@@ -11,12 +11,9 @@ class script(object):
 
 ᴍᴀɪɴᴛᴇɴᴀɴᴄᴇ ʙʏ : <a href=https://t.me/royaldwip>Rᴏʏᴀʟ-Dᴡɪᴘ</a> 😼</b>"""
 
-    DISCLAIMER_TXT = """<b>‼️ 𝖴𝗇𝗂𝖼𝗈𝗋𝗇 𝖠𝗅𝖾𝗋𝗍: 𝖢𝗈𝗉𝗒𝗋𝗂𝗀𝗁𝗍 𝖠𝗍𝗍𝖾𝗇𝗍𝗂𝗈𝗇 𝖱𝖾𝗊𝗎𝗂𝗋𝖾𝖽 ©️
+    DISCLAIMER_TXT = """<b>⚠️ Uɴɪᴄᴏʀɴ Aʟᴇʀᴛ: Cᴏᴘʏʀɪɢʜᴛ Aᴛᴛᴇɴᴛɪᴏɴ Rᴇǫᴜɪʀᴇᴅ ‼️
 
-𝖳𝗁𝗂𝗌 𝖳𝖾𝗅𝖾𝗀𝗋𝖺𝗆 𝖬𝗈𝗏𝗂𝖾 𝖡𝗈𝗍 𝗂𝗌 𝖽𝖾𝗌𝗂𝗀𝗇𝖾𝖽 𝗌𝗈𝗅𝖾𝗅𝗒 𝖿𝗈𝗋 𝖾𝖽𝗎𝖼𝖺𝗍𝗂𝗈𝗇𝖺𝗅 𝖺𝗇𝖽 𝗂𝗇𝖿𝗈𝗋𝗆𝖺𝗍𝗂𝗈𝗇𝖺𝗅 𝗉𝗎𝗋𝗉𝗈𝗌𝖾𝗌.
-𝖶𝖾 𝖽𝗈 𝗇𝗈𝗍 𝖾𝗇𝖼𝗈𝗎𝗋𝖺𝗀𝖾 𝗈𝗋 𝖼𝗈𝗇𝖽𝗈𝗇𝖾 𝖺𝗇𝗒 𝖿𝗈𝗋𝗆 𝗈𝖿 𝖼𝗈𝗉𝗒𝗋𝗂𝗀𝗁𝗍 𝗂𝗇𝖿𝗋𝗂𝗇𝗀𝖾𝗆𝖾𝗇𝗍. 𝖳𝗁𝖾 𝗆𝗈𝗏𝗂𝖾𝗌 𝗉𝗋𝗈𝗏𝗂𝖽𝖾𝖽 𝖻𝗒 𝗍𝗁𝗂𝗌 𝖻𝗈𝗍 𝖺𝗋𝖾 𝖾𝗂𝗍𝗁𝖾𝗋 𝗂𝗇 𝗍𝗁𝖾 𝗉𝗎𝖻𝗅𝗂𝖼 𝖽𝗈𝗆𝖺𝗂𝗇 𝗈𝗋 𝗌𝗁𝖺𝗋𝖾𝖽 𝗎𝗇𝖽𝖾𝗋 𝖿𝖺𝗂𝗋 𝗎𝗌𝖾 𝗉𝗋𝗂𝗇𝖼𝗂𝗉𝗅𝖾𝗌.
-𝖴𝗌𝖾𝗋𝗌 𝖺𝗋𝖾 𝗌𝗈𝗅𝖾𝗅𝗒 𝗋𝖾𝗌𝗉𝗈𝗇𝗌𝗂𝖻𝗅𝖾 𝖿𝗈𝗋 𝖾𝗇𝗌𝗎𝗋𝗂𝗇𝗀 𝗍𝗁𝖺𝗍 𝗍𝗁𝖾𝗂𝗋 𝗎𝗌𝖾 𝗈𝖿 𝗍𝗁𝖾 𝖻𝗈𝗍 𝖼𝗈𝗆𝗉𝗅𝗂𝖾𝗌 𝗐𝗂𝗍𝗁 𝖺𝗅𝗅 𝖺𝗉𝗉𝗅𝗂𝖼𝖺𝖻𝗅𝖾 𝖼𝗈𝗉𝗒𝗋𝗂𝗀𝗁𝗍 𝗅𝖺𝗐𝗌 𝖺𝗇𝖽 𝗋𝖾𝗀𝗎𝗅𝖺𝗍𝗂𝗈𝗇𝗌 𝗂𝗇 𝗍𝗁𝖾𝗂𝗋 𝗃𝗎𝗋𝗂𝗌𝖽𝗂𝖼𝗍𝗂𝗈𝗇. 𝖶𝖾 𝖽𝗈 𝗇𝗈𝗍 𝗍𝖺𝗄𝖾 𝖺𝗇𝗒 𝗋𝖾𝗌𝗉𝗈𝗇𝗌𝗂𝖻𝗂𝗅𝗂𝗍𝗒 𝖿𝗈𝗋 𝖺𝗇𝗒 𝗆𝗂𝗌𝗎𝗌𝖾 𝗈𝖿 𝗍𝗁𝖾 𝖼𝗈𝗇𝗍𝖾𝗇𝗍 𝗉𝗋𝗈𝗏𝗂𝖽𝖾𝖽 𝖻𝗒 𝗍𝗁𝗂𝗌 𝖻𝗈𝗍.</b>"""
-    
+Tʜɪs Tᴇʟᴇɢʀᴀᴍ Mᴏᴠɪᴇ Bᴏᴛ ɪs ᴅᴇsɪɢɴᴇᴅ sᴏʟᴇʟʏ ғᴏʀ ᴇᴅᴜᴄᴀᴛɪᴏɴᴀʟ ᴀɴᴅ ɪɴғᴏʀᴍᴀᴛɪᴏɴᴀʟ ᴘᴜʀᴘᴏsᴇs. Wᴇ ᴅᴏ ɴᴏᴛ ᴇɴᴄᴏᴜʀᴀɢᴇ ᴏʀ ᴄᴏɴᴅᴏɴᴇ ᴀɴʏ ғᴏʀᴍ ᴏғ ᴄᴏᴘʏʀɪɢʜᴛ ɪɴғʀɪɴɢᴇᴍᴇɴᴛ. Tʜᴇ ᴍᴏᴠɪᴇs ᴘʀᴏᴠɪᴅᴇᴅ ʙʏ ᴛʜɪs ʙᴏᴛ ᴀʀᴇ ᴇɪᴛʜᴇʀ ɪɴ ᴛʜᴇ ᴘᴜʙʟɪᴄ ᴅᴏᴍᴀɪɴ ᴏʀ sʜᴀʀᴇᴅ ᴜɴᴅᴇʀ ғᴀɪʀ ᴜsᴇ ᴘʀɪɴᴄɪᴘʟᴇs. Usᴇʀs ᴀʀᴇ sᴏʟᴇʟʏ ʀᴇsᴘᴏɴsɪʙʟᴇ ғᴏʀ ᴇɴsᴜʀɪɴɢ ᴛʜᴀᴛ ᴛʜᴇɪʀ ᴜsᴇ ᴏғ ᴛʜᴇ ʙᴏᴛ ᴄᴏᴍᴘʟɪᴇs ᴡɪᴛʜ ᴀʟʟ ᴀᴘᴘʟɪᴄᴀʙʟᴇ ᴄᴏᴘʏʀɪɢʜᴛ ʟᴀᴡs ᴀɴᴅ ʀᴇɢᴜʟᴀᴛɪᴏɴs ɪɴ ᴛʜᴇɪʀ ɪᴜʀɪsᴅɪᴄᴛɪᴏɴ. Wᴇ ᴅᴏ ɴᴏᴛ ᴛᴀᴋᴇ ᴀɴʏ ʀᴇsᴘᴏɴsɪʙɪʟɪᴛʏ ғᴏʀ ᴀɴʏ ᴍɪsᴜsᴇ ᴏғ ᴛʜᴇ ᴄᴏɴᴛᴇɴᴛ ᴘʀᴏᴠɪᴅᴇᴅ ʙʏ ᴛʜɪs ʙᴏᴛ.</b>"""
     HELP_TXT = """<b>Hᴇʏ {}
 Hᴇʀᴇ Is Tʜᴇ Hᴇʟᴘ Fᴏʀ Mʏ Cᴏᴍᴍᴀɴᴅs.</b>"""
 
@@ -418,28 +415,26 @@ Aᴠᴀɪʟᴀʙʟᴇ ᴄᴏᴍᴍᴀɴᴅs:
 
 BOT WORKING PROPERLY"""
  
-    EARN_TXT = """<b>Hey <a href='tg://settings'>My Friend</a> 
+    EARN_TXT = """<b>🔥 Exᴄɪᴛɪɴɢ Nᴇᴡs! 🔥
 
+Nᴏᴡ ʏᴏᴜ ᴄᴀɴ ᴍᴏɴᴇᴛɪᴢᴇ ʏᴏᴜʀ Tᴇʟᴇɢʀᴀᴍ ɢʀᴏᴜᴘ!
 
- Now you can earn money on Telegram too.
+Aʟʟ ʏᴏᴜ ɴᴇᴇᴅ ɪs ᴀ Tᴇʟᴇɢʀᴀᴍ ɢʀᴏᴜᴘ ᴛᴏ sᴛᴀʀᴛ ᴇᴀʀɴɪɴɢ ᴍᴏɴᴇʏ.
 
- You must have 1 group to earn money by telegram.
- If you have a group, you can earn money by adding our bot to your group.
+Sɪᴍᴘʟʏ ᴀᴅᴅ ᴏᴜʀ ʙᴏᴛ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ, ᴀɴᴅ ᴛʜᴇ ᴍᴏʀᴇ ᴍᴇᴍʙᴇʀs ʏᴏᴜ ʜᴀᴠᴇ, ᴛʜᴇ ʜɪɢʜᴇʀ ʏᴏᴜʀ ᴇᴀʀɴɪɴɢs!
 
- The more members you have in your group, the higher your income will be.
+Hᴇʀᴇ's ᴡʜᴀᴛ ᴛᴏ ᴅᴏ:
 
- How and what to do
+Sᴛᴇᴘ 𝟷: Mᴀᴋᴇ ᴏᴜʀ ʙᴏᴛ ᴀɴ ᴀᴅᴍɪɴ ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ.
 
- Step 1: Administer this THALAPATHY-FILTER-BOT bot to your group
+Sᴛᴇᴘ 𝟸: Aᴅᴅ ʏᴏᴜʀ ᴡᴇʙsɪᴛᴇ ᴀɴᴅ API.
 
- Step 2: Add your website and API
+Exᴀᴍᴘʟᴇ: /shortlink {Your_Shortner_Link} {Shortner_API}
 
- Exp: /shortlink omegalinks.in 4b392f8eb6ad711fbe58
+Iɴᴄʟᴜᴅᴇ ᴀ ᴛᴜᴛᴏʀɪᴀʟ ᴠɪᴅᴇᴏ ᴅᴇᴍᴏɴsᴛʀᴀᴛɪɴɢ ʜᴏᴡ ᴛᴏ ᴏᴘᴇɴ ᴀ sʜᴏʀᴛ ʟɪɴᴋ. 
 
- Add a video
+👇 Hᴇʀᴇ's ʜᴏᴡ ᴛᴏ ᴀᴅᴅ ɪᴛ: 👇
 
- 👇 How to add 👇
+Exᴀᴍᴘʟᴇ: /set_tutorial {Tutorial_Link}
 
- Exp: /set_tutorial video link
-
-Also your tutorial will be Added Your Group..."""
+Bᴇғᴏʀᴇ ᴘʀᴏᴄᴇᴇᴅɪɴɢ, ᴇɴsᴜʀᴇ ᴛᴏ ᴠᴇʀɪғʏ ᴛʜᴇ ʙᴏᴛ's ʟᴇɢɪᴛɪᴍᴀᴄʏ ᴀɴᴅ sᴇʀᴠɪᴄᴇ ᴀᴜᴛʜᴇɴᴛɪᴄɪᴛʏ. Sᴛᴀʏ sᴀғᴇ ᴀɴᴅ ɪɴғᴏʀᴍᴇᴅ!</b>"""
