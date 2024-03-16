@@ -360,14 +360,14 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
         ]
         btn.insert(0, 
             [
-                InlineKeyboardButton(f'🗣 Sᴇʟᴇᴄᴛ ', 'select'),
-                InlineKeyboardButton("🔺 Cʜᴏᴏsᴇ Lᴀɴɢᴜᴀɢᴇ 🔻", callback_data=f"languages#{key}"),
-                InlineKeyboardButton("🥶 Cʜᴏᴏsᴇ Sᴇᴀsᴏɴs 🥶",  callback_data=f"seasons#{key}")
+                InlineKeyboardButton(f'Channel ♻️', url='t.me/swiftHornCinema'),
+                InlineKeyboardButton("Lᴀɴɢᴜᴀɢᴇ", callback_data=f"languages#{key}"),
+                InlineKeyboardButton("Sᴇᴀsᴏɴs",  callback_data=f"seasons#{key}")
             ]
         )
         btn.insert(0, [
-            InlineKeyboardButton("⚡ Sᴛᴀʀᴛ Bᴏᴛ ⚡", url=f"https://telegram.me/{temp.U_NAME}"),
-            InlineKeyboardButton("☄️Sᴇɴᴅ Aʟʟ ☄️", callback_data=f"sendfiles#{key}")
+            InlineKeyboardButton("Oᴡɴᴇʀ", user_id=int(1782834874)),
+            InlineKeyboardButton("🗣️ Sᴇɴᴅ Aʟʟ ", callback_data=f"sendfiles#{key}")
         ])
     else:
         btn = []
