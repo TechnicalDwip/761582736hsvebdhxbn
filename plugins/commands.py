@@ -165,13 +165,10 @@ async def start(client, message):
                     protect_content=msg.get('protect', False),
                     reply_markup=InlineKeyboardMarkup(
                         [
-                            [
-                                InlineKeyboardButton('Movie Channel', url="https://t.me/+8KKO8_lJaJAxNDk9")
-                            ],
-                            [
+                            [InlineKeyboardButton('Movie Channel', url="https://t.me/+8KKO8_lJaJAxNDk9")
+                            ],[
                                 InlineKeyboardButton('🚀 Stream & Download', callback_data=f'generate_stream_link:{file_id}')
-                            ]
-                        ]
+                            ]]
                     )
             except FloodWait as e:
                 await asyncio.sleep(e.x)
@@ -183,13 +180,10 @@ async def start(client, message):
                     protect_content=msg.get('protect', False),
                     reply_markup=InlineKeyboardMarkup(
                         [
-                            [
-                                InlineKeyboardButton('Movie Channel', url="https://t.me/+8KKO8_lJaJAxNDk9")
-                            ],
-                            [
+                            [InlineKeyboardButton('Movie Channel', url="https://t.me/+8KKO8_lJaJAxNDk9")
+                            ],[
                                 InlineKeyboardButton('🚀 Stream & Download', callback_data=f'generate_stream_link:{file_id}')
-                            ]
-                        ]
+                            ]]
                     )
             except Exception as e:
                 logger.warning(e, exc_info=True)
@@ -339,13 +333,10 @@ async def start(client, message):
                 protect_content=True if pre == 'filep' else False,
                 reply_markup=InlineKeyboardMarkup(
                     [
-                        [
-                            InlineKeyboardButton('Movie Channel', url="https://t.me/+8KKO8_lJaJAxNDk9")
-                        ],
-                        [
+                        [InlineKeyboardButton('Movie Channel', url="https://t.me/+8KKO8_lJaJAxNDk9")
+                        ],[
                             InlineKeyboardButton('🚀 Stream & Download', callback_data=f'generate_stream_link:{file_id}')
-                        ]
-                    ]
+                        ]]
                 )
             filesarr.append(msg)
         k = await client.send_message(chat_id = message.from_user.id, text=f"<b>Above Files Will be delete in 10min (Due to Copyright Issues)")
@@ -400,13 +391,10 @@ async def start(client, message):
                 protect_content=True if pre == 'filep' else False,
                 reply_markup=InlineKeyboardMarkup(
                     [
-                        [
-                            InlineKeyboardButton('Movie Channel', url="https://t.me/+8KKO8_lJaJAxNDk9")
-                        ],
-                        [
+                        [InlineKeyboardButton('Movie Channel', url="https://t.me/+8KKO8_lJaJAxNDk9")
+                        ],[
                             InlineKeyboardButton('🚀 Stream & Download', callback_data=f'generate_stream_link:{file_id}')
-                        ]
-                    ]
+                        ]]
                 )
             filetype = msg.media
             file = getattr(msg, filetype.value)
@@ -431,7 +419,7 @@ async def start(client, message):
             pass
         return await message.reply('No such file exist.')
     files = files_[0]
-    title = '@VJ_Bots  ' + ' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), files.file_name.split()))
+    title = '@SwiftHornCinema  ' + ' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), files.file_name.split()))
     size=get_size(files.file_size)
     f_caption=files.caption
     if CUSTOM_FILE_CAPTION:
@@ -459,13 +447,10 @@ async def start(client, message):
         protect_content=True if pre == 'filep' else False,
         reply_markup=InlineKeyboardMarkup(
             [
-                [
-                    InlineKeyboardButton('Movie Channel', url="https://t.me/+8KKO8_lJaJAxNDk9")
-                ],
-                [
+                [InlineKeyboardButton('Movie Channel', url="https://t.me/+8KKO8_lJaJAxNDk9")
+                ],[
                     InlineKeyboardButton('🚀 Stream & Download', callback_data=f'generate_stream_link:{file_id}')
-                ]
-            ]
+                ]]
         )
     btn = [[
         InlineKeyboardButton("Get File Again", callback_data=f'delfile#{file_id}')
