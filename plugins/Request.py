@@ -13,5 +13,3 @@ async def request_movie(bot, message):
         owner_message = f"New movie request: {movie_name}"
         await bot.send_message(OWNER_ID, owner_message)
         await bot.send_message(message.chat.id, "Movie request sent successfully.")
-
-client.start()
