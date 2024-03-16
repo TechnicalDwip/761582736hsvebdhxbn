@@ -1,8 +1,9 @@
 from pyrogram import Client, filters
-from info import API_ID, API_HASH, BOT_TOKEN, OWNER_ID
+from info import API_ID, API_HASH, BOT_TOKEN, ADMINS
+
+OWNER_ID = ADMINS
 
 client = Client("movie_request_bot", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
-
 @client.on_message(filters.command("request") & filters.private)
 async def request_movie(bot, update):
     if len(update.command) <= 1:
