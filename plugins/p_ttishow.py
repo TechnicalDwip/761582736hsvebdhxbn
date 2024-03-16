@@ -86,30 +86,35 @@ async def save_group(bot, message):
 async def leave_a_chat(bot, message):
     if len(message.command) == 1:
         return await message.reply('Give me a chat id')
-    chat = message.command[1]
-    try:
-        chat = int(chat)
-    except:
-        chat = chat
-    try:
-        buttons = [[
-            InlineKeyboardButton('Developer',url="https://t.me/royaldwip"),
-            InlineKeyboardButton("Channel", url="t.me/SwiftHornCinema")
-        ],[
-            InlineKeyboardButton('Use Me Here', url=f'http://t.me/SwiftHornRequest')
-        ]]
-        reply_markup=InlineKeyboardMarkup(buttons)
-        await bot.send_message(
-            chat_id=chat,
-            text='<b>My owner told me to leave this group so im leaving thanks'</b>',
-            reply_markup=reply_markup,
-        )
-
-        await bot.leave_chat(chat)
-        await message.reply(f"left the chat `{chat}`")
-    except Exception as e:
-        await message.reply(f'Error - {e}')
-
+        chat = message.command[1]
+        try:
+            chat = int(chat)
+        except ValueError:
+            return await message.reply('Invalid chat id. Please provide a valid integer.')
+            
+            try:
+                buttons = [
+                    [
+                        InlineKeyboardButton('Developer', url="https://t.me/royaldwip"),
+                        InlineKeyboardButton("Channel", url="t.me/SwiftHornCinema")
+                    ],
+                    [
+                        InlineKeyboardButton('Use Me Here', url='http://t.me/SwiftHornRequest')
+                    ]
+                ]
+                reply_markup = InlineKeyboardMarkup(buttons)
+                await bot.send_message(
+                    chat_id=chat,
+                    text='<b>My owner told me to leave this group so I\'m leaving. Thanks</b>',
+                    reply_markup=reply_markup,
+                    parse_mode='HTML'
+                )
+                
+                await bot.leave_chat(chat)
+                await message.reply(f"Left the chat `{chat}`")
+            except Exception as e:
+                await message.reply(f'Error - {e}')
+        
 @Client.on_message(filters.command('disable') & filters.user(ADMINS))
 async def disable_chat(bot, message):
     if len(message.command) == 1:
