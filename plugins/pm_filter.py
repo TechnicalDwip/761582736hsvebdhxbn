@@ -1324,7 +1324,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InputMediaPhoto(random.choice(PICS))
         )
         await query.message.edit_text(
-            text=script.START_TXT,
+            text=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
@@ -1390,11 +1390,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
-
     elif query.data == "earn":
-        buttons = [[
-            InlineKeyboardButton('⬅️', callback_data='start')
-        ]]
+        buttons = [
+            [
+                InlineKeyboardButton('‼️ Vɪᴇᴡ Aʟʟ Cᴏᴍᴍᴀɴᴅs 🥶', callback_data='viewall')
+            ],
+            [
+                InlineKeyboardButton('⬅️', callback_data='start')
+            ]
+        ]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text="● ◌ ◌ ◌ ◌"
@@ -1419,6 +1423,37 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
         await query.message.edit_text(
             text=script.EARN_TXT,
+            reply_markup=reply_markup,
+            parse_mode=enums.ParseMode.HTML
+        )
+    elif query.data == "viewall":
+        buttons = [[
+            InlineKeyboardButton('⬅️', callback_data='earn')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text="● ◌ ◌ ◌ ◌"
+        )
+        await query.message.edit_text(
+            text="● ● ◌ ◌ ◌"
+        )
+        await query.message.edit_text(
+            text="● ● ● ◌ ◌"
+        )
+        await query.message.edit_text(
+            text="● ● ● ● ◌"
+        )
+        await query.message.edit_text(
+            text="● ● ● ● ●"
+        )
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await client.edit_message_media(
+            query.message.chat.id, 
+            query.message.id, 
+            InputMediaPhoto(random.choice(PICS))
+        )
+        await query.message.edit_text(
+            text=script.VIEW_ALL_TXT,
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
