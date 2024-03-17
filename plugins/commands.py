@@ -1101,10 +1101,10 @@ async def settutorial(bot, message):
 async def removetutorial(bot, message):
     userid = message.from_user.id if message.from_user else None
     if not userid:
-        return await message.reply(f"You are anonymous admin. Turn off anonymous admin and try again this command")
+        return await message.reply(f"**You are anonymous admin. Turn off anonymous admin and try again this command**")
     chat_type = message.chat.type
     if chat_type == enums.ChatType.PRIVATE:
-        return await message.reply_text("This Command Work Only in group\n\nTry it in your own group")
+        return await message.reply_text("**This Command Work Only in group\n\nTry it in your own group**")
     elif chat_type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
         grpid = message.chat.id
         title = message.chat.title
