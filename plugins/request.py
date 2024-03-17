@@ -2,7 +2,7 @@ import asyncio
 import os
 from pyrogram import filters, enums, Client 
 
-@Client.on_message(filters.command("request") & (filters.group | filters.private))
+@Client.on_message(filters.command("request") & filters.group)
 async def report_user(bot, message):
     if message.reply_to_message:
         chat_id = message.chat.id
