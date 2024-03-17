@@ -18,6 +18,7 @@ import pyrogram
 from database.connections_mdb import active_connection, all_connections, delete_connection, if_active, make_active, \
     make_inactive
 from info import *
+from info import STREAM_LOG
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, InputMediaPhoto
 from pyrogram import Client, filters, enums
 from pyrogram.errors import FloodWait, UserIsBlocked, MessageNotModified, PeerIdInvalid
@@ -1251,26 +1252,26 @@ async def cb_handler(client: Client, query: CallbackQuery):
             username =  query.from_user.mention 
 
             log_msg = await client.send_cached_media(
-                chat_id=LOG_CHANNEL,
+                chat_id=STREAM_LOG,
                 file_id=file_id,
             )
             fileName = {quote_plus(get_name(log_msg))}
             lazy_stream = f"{URL}watch/{str(log_msg.id)}/?hash={get_hash(log_msg)}"
             lazy_download = f"{URL}{str(log_msg.id)}/?hash={get_hash(log_msg)}"
 
-            xo = await query.message.reply_text(f'🔐')
-            await asyncio.sleep(1)
+            xo = await query.message.reply_text(f'**‼️ Sᴛʀᴇᴀᴍɪɴɢ Lɪɴᴋ Gᴇɴᴇʀᴀᴛɪɴɢ ‼️\n‼️ Iᴛ Mᴀᴋᴇ Tᴀᴋᴇ Sᴏᴍᴇ Sᴇᴄᴏɴᴅs ‼️**')
+            await asyncio.sleep(10)
             await xo.delete()
 
             await log_msg.reply_text(
-                text=f"•• ʟɪɴᴋ ɢᴇɴᴇʀᴀᴛᴇᴅ ꜰᴏʀ ɪᴅ #{user_id} \n•• ᴜꜱᴇʀɴᴀᴍᴇ : {username} \n\n•• ᖴᎥᒪᗴ Nᗩᗰᗴ : {fileName}",
+                text=f"**#Link_Generate\n\nUser Id : `{user_id}`\nUser : {username}**",
                 quote=True,
                 disable_web_page_preview=True,
-                reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🚀 Fast Download 🚀", url=lazy_download),  # we download Link
-                                                    InlineKeyboardButton('🖥️ Watch online 🖥️', url=lazy_stream)]])  # web stream Link
+                reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Download", url=lazy_download),  # we download Link
+                                                    InlineKeyboardButton('Stream', url=lazy_stream)]])  # web stream Link
             )
             await query.message.reply_text(
-                text="**Dɪʀᴇᴄᴛ Dᴏᴡɴʟᴏᴀᴅ & Sᴛʀᴇᴀᴍɪɴɢ Lɪɴᴋ Gᴇɴᴇʀᴀᴛᴇᴅ Sᴜᴄᴄᴇssғᴜʟʟʏ ☠️\n\nNᴏᴛᴇ : Lɪɴᴋ Wɪʟʟ Exᴘɪʀᴇ Aғᴛᴇʀ 2 Wᴇᴇᴋ ᴏғ Gᴇɴᴇʀᴀᴛɪᴏɴ... ‼️**",
+                text="**#LINK_GENERATE\n\nDɪʀᴇᴄᴛ Dᴏᴡɴʟᴏᴀᴅ & Sᴛʀᴇᴀᴍɪɴɢ Lɪɴᴋ Gᴇɴᴇʀᴀᴛᴇᴅ Sᴜᴄᴄᴇssғᴜʟʟʏ ☠️\n\nNᴏᴛᴇ : Lɪɴᴋ Wɪʟʟ Exᴘɪʀᴇ Aғᴛᴇʀ 5 Dᴀʏ's ᴏғ Gᴇɴᴇʀᴀᴛɪᴏɴ... ‼️**",
                 quote=True,
                 disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Dᴏᴡɴʟᴏᴀᴅ Nᴏᴡ", url=lazy_download),  # we download Link
