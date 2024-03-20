@@ -84,10 +84,10 @@ async def pm_text(bot, message):
         if user_id in ADMINS:
             return  # ignore admins
             await message.reply_text(
-                text=script.PM_WARN,
+                text=f"<b>I cant give you movie in Personally (Copyright Issues) Kindly Join My Movie Request Group ‼️\n\nमें आपको Personally में फिल्म नहीं भेज सकता (Copyright Issues)। कृपया मेरे Movie Request Group में शामिल हों ‼️</b>",
                 reply_markup=InlineKeyboardMarkup([
-                    [InlineKeyboardButton("‼️ Join Now Group ‼️", url=f"https://t.me/SwiftHornRequest")],
-                    [InlineKeyboardButton("🔺 Developer 🔻", user_id=int(1782834874))]
+                    [InlineKeyboardButton("‼️ Movie Request Group ‼️", url=f"https://t.me/SwiftHornRequest")],
+                    [InlineKeyboardButton("Close 🔐", callback_data="close_data")]
                 ])
             )
             await bot.send_message(
