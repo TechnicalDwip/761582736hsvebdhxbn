@@ -18,6 +18,7 @@ import pyrogram
 from database.connections_mdb import active_connection, all_connections, delete_connection, if_active, make_active, \
     make_inactive
 from info import *
+from Script import script 
 from info import STREAM_LOG
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, InputMediaPhoto
 from pyrogram import Client, filters, enums
@@ -79,17 +80,22 @@ async def pm_text(bot, message):
     content = message.text
     user = message.from_user.first_name
     user_id = message.from_user.id
-    if content.startswith("/") or content.startswith("#"): return  # ignore commands and hashtags
-    if user_id in ADMINS: return # ignore admins
-    await message.reply_text(
-         text=f"<b>𝖬𝗈𝗏𝗂𝖾𝗌 𝖺𝗋𝖾𝗇'𝗍 𝗉𝗋𝗈𝗏𝗂𝖽𝖾𝖽 𝗏𝗂𝖺 𝗉𝗋𝗂𝗏𝖺𝗍𝖾 𝗆𝖾𝗌𝗌𝖺𝗀𝖾, 𝖻𝗎𝗍 𝗒𝗈𝗎 𝖼𝖺𝗇 𝗃𝗈𝗂𝗇 𝗍𝗁𝖾 𝗀𝗋𝗈𝗎𝗉 𝗏𝗂𝖺 𝖻𝖾𝗅𝗈𝗐 𝖻𝗎𝗍𝗍𝗈𝗇</b>",   
-         reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("JOIN GROUP", url=f"https://t.me/SwiftHornRequest")]])
-    )
-    await bot.send_message(
-        chat_id=LOG_CHANNEL,
-        text=f"<b>#PM_MSG\n\nNᴀᴍᴇ : {user}\n\nID : {user_id}\n\nMᴇssᴀɢᴇ : {content}</b>"
-    )
-
+    if content.startswith("/") or content.startswith("#"):
+        return  # ignore commands and hashtags
+        if user_id in ADMINS:
+            return  # ignore admins
+            await message.reply_text(
+                text=script.PM_WARN,
+                reply_markup=InlineKeyboardMarkup([
+                    [InlineKeyboardButton("‼️ Join Now Group ‼️", url=f"https://t.me/SwiftHornRequest")],
+                    [InlineKeyboardButton("🔺 Developer 🔻", user_id=int(1782834874))]
+                ])
+            )
+            await bot.send_message(
+                chat_id=LOG_CHANNEL,
+                text=f"<b>#PM_MSG\n\nNᴀᴍᴇ : {user}\n\nID : {user_id}\n\nMᴇssᴀɢᴇ : {content}</b>"
+            )
+            
 @Client.on_callback_query(filters.regex(r"^next"))
 async def next_page(bot, query):
     ident, req, key, offset = query.data.split("_")
