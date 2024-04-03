@@ -21,7 +21,15 @@ Tʜɪs Tᴇʟᴇɢʀᴀᴍ Mᴏᴠɪᴇ Bᴏᴛ ɪs ᴅᴇsɪɢɴᴇᴅ sᴏʟ�
     HELP_TXT = """<b>Hᴇʏ {}
 Hᴇʀᴇ Is Tʜᴇ Hᴇʟᴘ Fᴏʀ Mʏ Cᴏᴍᴍᴀɴᴅs.</b>"""
 
-    DNT_TXT = """3"""
+    DNT_TXT = """<b>Hᴇʟᴘ ᴋᴇᴇᴘ ᴏᴜʀ ᴍᴏᴠɪᴇ ʙᴏᴛ ʀᴜɴɴɪɴɢ sᴍᴏᴏᴛʜʟʏ!
+    
+    Yᴏᴜʀ ᴅᴏɴᴀᴛɪᴏɴs ᴀʀᴇ ᴠɪᴛᴀʟ ғᴏʀ ᴜs ᴛᴏ ᴘʀᴏᴠɪᴅᴇ ʏᴏᴜ ᴡɪᴛʜ ᴛʜᴇ ʙᴇsᴛ ᴍᴏᴠɪᴇ ʀᴇᴄᴏᴍᴍᴇɴᴅᴀᴛɪᴏɴs.
+    
+    Sᴜᴘᴘᴏʀᴛ ᴜs ᴛᴏᴅᴀʏ ᴛᴏ ᴇɴsᴜʀᴇ ᴏᴜʀ sᴇʀᴠɪᴄᴇ ᴄᴏɴᴛɪɴᴜᴇs.
+    
+    Tʜᴀɴᴋ ʏᴏᴜ ғᴏʀ ʏᴏᴜʀ ɢᴇɴᴇʀᴏsɪᴛʏ!
+    
+    UPI ID : `deepbanik@fam`</b>"""
     ABOUT_TXT = """<b>‣ ᴍʏ ɴᴀᴍᴇ : <a href=https://t.me/Shinchanfilterrobot>Shinchan Bot</a> 
 
 ‣ ᴅᴇᴠᴇʟᴏᴘᴇʀ : <a href='https://t.me/royaldwip'>【﻿ R O Y A L - D W I P 】</a> 
