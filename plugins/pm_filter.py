@@ -1496,7 +1496,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.message.edit_text(
             text=script.DNT_TXT,
             reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
         )
     #add more callback
     elif query.data.startswith("setgs"):
