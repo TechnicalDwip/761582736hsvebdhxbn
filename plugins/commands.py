@@ -27,13 +27,13 @@ current_time = datetime.datetime.utcnow() + datetime.timedelta(hours=5, minutes=
 current_hour = current_time.hour
 
 if 4 <= current_hour < 12:
-    r = "Gᴏᴏᴅ Mᴏʀɴɪɴɢ"
+    wishes = "Hᴀʀᴇ Kʀɪsʜɴᴀ 🙏\nGᴏᴏᴅ Mᴏʀɴɪɴɢ 🇮🇳"
 elif 12 <= current_hour < 15:
-    r = "Gᴏᴏᴅ Aғᴛᴇʀɴᴏᴏɴ"
+    wishes = "Hᴀʀᴇ Kʀɪsʜɴᴀ 🙏\nGᴏᴏᴅ Aғᴛᴇʀɴᴏᴏɴ 🇮🇳"
 elif 15 <= current_hour < 20:
-    r = "Gᴏᴏᴅ Eᴠᴇɴɪɴɢ"
+    wishes = "Hᴀʀᴇ Kʀɪsʜɴᴀ 🙏\nGᴏᴏᴅ Eᴠᴇɴɪɴɢ 🇮🇳"
 else:
-    r = "Gᴏᴏᴅ Nɪɢʜᴛ"
+    wishes = "Hᴀʀᴇ Kʀɪsʜɴᴀ 🙏\nGᴏᴏᴅ Nɪɢʜᴛ 🇮🇳"
 
 BATCH_FILES = {}
 
@@ -70,8 +70,10 @@ async def start(client, message):
             InlineKeyboardButton('🔻 Dᴏɴᴀᴛᴇ Us Fᴏʀ Sᴜʀᴠɪᴠᴇ 🔺', callback_data='donate')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        m=await message.reply_text("**Starting.. ⏳**") 
+        m=await message.reply_text("**Sᴛᴀʀᴛɪɴɢ.. ⏳**") 
         await asyncio.sleep(1.9)
+        await m.edit_text("**{wishes}**")
+        await asyncio.sleep(2.5) 
         await m.delete()
         await message.reply_photo(
             photo=random.choice(PICS),
