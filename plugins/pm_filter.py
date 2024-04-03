@@ -50,24 +50,12 @@ BUTTONS1 = {}
 BUTTONS2 = {}
 SPELL_CHECK = {}
 # ENABLE_SHORTLINK = ""
-import datetime
-
-current_time = datetime.datetime.utcnow() + datetime.timedelta(hours=5, minutes=30)
-current_hour = current_time.hour
-
-if 4 <= current_hour < 12:
-    r = "Gᴏᴏᴅ Mᴏʀɴɪɴɢ"
-elif 12 <= current_hour < 15:
-    r = "Gᴏᴏᴅ Aғᴛᴇʀɴᴏᴏɴ"
-elif 15 <= current_hour < 20:
-    r = "Gᴏᴏᴅ Eᴠᴇɴɪɴɢ"
-else:
-    r = "Gᴏᴏᴅ Nɪɢʜᴛ"
-
+REACTIONS = ["👍", "❤️", "😊", "😄", "😎", "😍", "🤩", "😁", "🥳", "🎉", "👏", "🙌", "🔥", "💯", "👌"]
 
 @Client.on_message(filters.group & filters.text & filters.incoming)
 async def give_filter(client, message):
     await message.react(random.choice(REACTIONS))
+    
     if message.chat.id != SUPPORT_CHAT_ID:
         manual = await manual_filters(client, message)
         if manual == False:
@@ -81,35 +69,38 @@ async def give_filter(client, message):
                 settings = await get_settings(message.chat.id)
                 if settings['auto_ffilter']:
                     await auto_filter(client, message) 
-    else: #a better logic to avoid repeated lines of code in auto_filter function
-        search = message.text
-        temp_files, temp_offset, total_results = await get_search_results(chat_id=message.chat.id, query=search.lower(), offset=0, filter=True)
-        if total_results == 0:
-            return
-        else:
-            return await message.reply_text(f"<b>Hᴇʏ {message.from_user.mention}, {str(total_results)} ʀᴇsᴜʟᴛs ᴀʀᴇ ғᴏᴜɴᴅ ɪɴ ᴍʏ ᴅᴀᴛᴀʙᴀsᴇ ғᴏʀ ʏᴏᴜʀ ᴏ̨ᴜᴇʀʏ {search}. \n\nTʜɪs ɪs ᴀ sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ sᴏ ᴛʜᴀᴛ ʏᴏᴜ ᴄᴀɴ'ᴛ ɢᴇᴛ ғɪʟᴇs ғʀᴏᴍ ʜᴇʀᴇ...\n\nJᴏɪɴ ᴀɴᴅ Sᴇᴀʀᴄʜ Hᴇʀᴇ - https://t.me/vj_bots</b>")
+                else: #a better logic to avoid repeated lines of code in auto_filter function
+                    search = message.text
+                    temp_files, temp_offset, total_results = await get_search_results(chat_id=message.chat.id, query=search.lower(), offset=0, filter=True)
+                    if total_results == 0:
+                        return
+                    else:
+                        return await message.reply_text(f"<b>Hᴇʏ {message.from_user.mention}, {str(total_results)} ʀᴇsᴜʟᴛs ᴀʀᴇ ғᴏᴜɴᴅ ɪɴ ᴍʏ ᴅᴀᴛᴀʙᴀsᴇ ғᴏʀ ʏᴏᴜʀ ᴏ̨ᴜᴇʀʏ {search}. \n\nTʜɪs ɪs ᴀ sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ sᴏ ᴛʜᴀᴛ ʏᴏᴜ ᴄᴀɴ'ᴛ ɢᴇᴛ ғɪʟᴇs ғʀᴏᴍ ʜᴇʀᴇ...\n\nJᴏɪɴ ᴀɴᴅ Sᴇᴀʀᴄʜ Hᴇʀᴇ - https://t.me/vj_bots</b>")
 
 @Client.on_message(filters.private & filters.text & filters.incoming)
 async def pm_text(bot, message):
     content = message.text
     user = message.from_user.first_name
     user_id = message.from_user.id
+    reaction = random.choice(REACTIONS)
+    await message.react(reaction)
     if content.startswith("/") or content.startswith("#"):
-        return  # ignore commands and hashtags
-        if user_id in ADMINS:
-            return  # ignore admins
-            await message.reply_text(
-                text=f"<b>I cant give you movie in Personally (Copyright Issues) Kindly Join My Movie Request Group ‼️\n\nमें आपको Personally में फिल्म नहीं भेज सकता (Copyright Issues)। कृपया मेरे Movie Request Group में शामिल हों ‼️</b>",
-                reply_markup=InlineKeyboardMarkup([
-                    [InlineKeyboardButton("‼️ Movie Request Group ‼️", url=f"https://t.me/SwiftHornRequest")],
-                    [InlineKeyboardButton("Close 🔐", callback_data="close_data")]
-                ])
-            )
-            await bot.send_message(
-                chat_id=LOG_CHANNEL,
-                text=f"<b>#PM_MSG\n\nNᴀᴍᴇ : {user}\n\nID : {user_id}\n\nMᴇssᴀɢᴇ : {content}</b>"
-            )
-            
+        return  # Ignore commands and hashtags
+    if user_id in ADMINS:
+        return  # Ignore admins
+        await message.reply_text(
+            text=f"<b>I can't send you a movie personally (Copyright Issues). Kindly join my Movie Request Group ‼️\n\nमें आपको Personal में फिल्म नहीं भेज सकता (Copyright Issues)। कृपया मेरे Movie Request Group में शामिल हों ‼️</b>",
+            reply_markup=InlineKeyboardMarkup([
+                [InlineKeyboardButton("‼️ Movie Request Group ‼️", url="https://t.me/SwiftHornRequest")],
+                [InlineKeyboardButton("Close 🔐", callback_data="close_data")]
+            ])
+        )
+        await bot.send_message(
+            chat_id=LOG_CHANNEL,
+            text=f"<b>#PM_MSG\n\nName : {user}\n\nID : {user_id}\n\nMessage : {content}</b>"
+        )
+
+
 @Client.on_callback_query(filters.regex(r"^next"))
 async def next_page(bot, query):
     ident, req, key, offset = query.data.split("_")
