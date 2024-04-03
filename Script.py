@@ -7,7 +7,7 @@ class script(object):
     PM_WARN = """<b>I cant give you movie in PM (Copyright Issues) Kindly Join My Movie Request Group ‼️
     
     में आपको Personally में फिल्म नहीं भेज सकता (Copyright Issues)। कृपया मेरे Movie Request Group में शामिल हों</b>"""
-    START_TXT = """<b>{r}! {},\nᴍʏ sᴇʟғ : <a href=https://t.me/{}>{}</a>
+    START_TXT = """<b>Hᴇʟʟᴏ {},\nᴍʏ sᴇʟғ : <a href=https://t.me/{}>{}</a>
     
 ɪ ᴀᴍ ᴘᴏᴡᴇʀ ғᴜʟʟ ᴀᴜᴛᴏ ғɪʟᴛᴇʀ ʙᴏᴛ
 ɴᴏ ɴᴇᴇᴅ ᴛᴏ ᴏᴘᴇɴ ᴀɴʏ ᴀᴅs ʟɪɴᴋ ᴛᴏ ᴜsᴇ ᴍᴇ
