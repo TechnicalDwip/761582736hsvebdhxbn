@@ -21,6 +21,7 @@ Tʜɪs Tᴇʟᴇɢʀᴀᴍ Mᴏᴠɪᴇ Bᴏᴛ ɪs ᴅᴇsɪɢɴᴇᴅ sᴏʟ�
     HELP_TXT = """<b>Hᴇʏ {}
 Hᴇʀᴇ Is Tʜᴇ Hᴇʟᴘ Fᴏʀ Mʏ Cᴏᴍᴍᴀɴᴅs.</b>"""
 
+    DNT_TXT = """3"""
     ABOUT_TXT = """<b>‣ ᴍʏ ɴᴀᴍᴇ : <a href=https://t.me/Shinchanfilterrobot>Shinchan Bot</a> 
 
 ‣ ᴅᴇᴠᴇʟᴏᴘᴇʀ : <a href='https://t.me/royaldwip'>【﻿ R O Y A L - D W I P 】</a> 
