@@ -30,6 +30,7 @@ PICS = (environ.get('PICS', 'https://graph.org/file/d777c2add00f1f6e67d0c.png'))
 NOR_IMG = environ.get("NOR_IMG", "https://te.legra.ph/file/a27dc8fe434e6b846b0f8.jpg")
 MELCOW_VID = environ.get("MELCOW_VID", "")
 SPELL_IMG = environ.get("SPELL_IMG", "https://graph.org/file/e1f3c25b5baf2a564919f.png")
+DONATE = (environ.get('DONATE', 'https://telegra.ph/file/9d90a18625b9770a74081.jpg')).split() #PAYMENT QR CODE PHOTO 
 
 # Admins, Channels & Users
 ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '6812448168 1782834874').split()]
