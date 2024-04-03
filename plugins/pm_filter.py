@@ -1306,6 +1306,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ],[
             InlineKeyboardButton('💸 ᴇᴀʀɴ ᴍᴏɴᴇʏ 💸', callback_data='earn'),
             InlineKeyboardButton('📚 Aʙᴏᴜᴛ 📚', callback_data='about')
+        ],[
+            InlineKeyboardButton('🔻 Dᴏɴᴀᴛᴇ Us Fᴏʀ Sᴜʀᴠɪᴠᴇ 🔺', callback_data='donate')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -1320,13 +1322,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.message.edit_text(
             text="● ● ● ● ◌"
         )
-        await query.message.edit_text(
-            text="● ● ● ● ●"
-        )
-        reply_markup = InlineKeyboardMarkup(buttons)
         await client.edit_message_media(
             query.message.chat.id, 
-            query.message.id, 
+            query.message.id,
             InputMediaPhoto(random.choice(PICS))
         )
         await query.message.edit_text(
