@@ -23,18 +23,6 @@ import base64
 logger = logging.getLogger(__name__)
 import datetime
 
-current_time = datetime.datetime.utcnow() + datetime.timedelta(hours=5, minutes=30)
-current_hour = current_time.hour
-
-if 4 <= current_hour < 12:
-    wishes = "Hᴀʀᴇ Kʀɪsʜɴᴀ 🙏\nGᴏᴏᴅ Mᴏʀɴɪɴɢ 🇮🇳"
-elif 12 <= current_hour < 15:
-    wishes = "Hᴀʀᴇ Kʀɪsʜɴᴀ 🙏\nGᴏᴏᴅ Aғᴛᴇʀɴᴏᴏɴ 🇮🇳"
-elif 15 <= current_hour < 20:
-    wishes = "Hᴀʀᴇ Kʀɪsʜɴᴀ 🙏\nGᴏᴏᴅ Eᴠᴇɴɪɴɢ 🇮🇳"
-else:
-    wishes = "Hᴀʀᴇ Kʀɪsʜɴᴀ 🙏\nGᴏᴏᴅ Nɪɢʜᴛ 🇮🇳"
-
 BATCH_FILES = {}
 
 @Client.on_message(filters.command("start") & filters.incoming)
@@ -70,6 +58,17 @@ async def start(client, message):
             InlineKeyboardButton('🔻 Dᴏɴᴀᴛᴇ Us Fᴏʀ Sᴜʀᴠɪᴠᴇ 🔺', callback_data='donate')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
+        current_time = datetime.datetime.utcnow() + datetime.timedelta(hours=5, minutes=30)
+        current_hour = current_time.hour
+        
+        if 4 <= current_hour < 12:
+            wishes = "Hᴀʀᴇ Kʀɪsʜɴᴀ 🙏\nGᴏᴏᴅ Mᴏʀɴɪɴɢ 🇮🇳"
+        elif 12 <= current_hour < 15:
+            wishes = "Hᴀʀᴇ Kʀɪsʜɴᴀ 🙏\nGᴏᴏᴅ Aғᴛᴇʀɴᴏᴏɴ 🇮🇳"
+        elif 15 <= current_hour < 20:
+            wishes = "Hᴀʀᴇ Kʀɪsʜɴᴀ 🙏\nGᴏᴏᴅ Eᴠᴇɴɪɴɢ 🇮🇳"
+        else:
+            wishes = "Hᴀʀᴇ Kʀɪsʜɴᴀ 🙏\nGᴏᴏᴅ Nɪɢʜᴛ 🇮🇳"
         m=await message.reply_text("**Sᴛᴀʀᴛɪɴɢ.. ⏳**") 
         await asyncio.sleep(1.9)
         await m.edit_text("**{wishes}**")
