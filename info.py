@@ -25,8 +25,6 @@ BOT_TOKEN = environ.get('BOT_TOKEN', "6226398171:AAGKSiO4AFL0q9W0UG0TSo-Vs0EZ_qT
 # Bot settings
 CACHE_TIME = int(environ.get('CACHE_TIME', 180))
 USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', True))
-#Reactions 
-REACTION= ["🗿","😍","🤡","👍","🔥","🌚","😈","🎉","👀","😎"]
 
 PICS = (environ.get('PICS', 'https://graph.org/file/d777c2add00f1f6e67d0c.png')).split() #SAMPLE PIC
 NOR_IMG = environ.get("NOR_IMG", "https://te.legra.ph/file/a27dc8fe434e6b846b0f8.jpg")
