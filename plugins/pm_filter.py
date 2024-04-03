@@ -1463,6 +1463,43 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
+
+    elif query.data == "donate":
+        buttons = [
+            [
+                InlineKeyboardButton('Sᴇɴᴅ DᴏɴᴀᴛɪᴏN SᴄʀᴇᴇɴSʜᴏᴛ 📷', user_id=int(1782834874))
+            ],
+            [
+                InlineKeyboardButton('⬅️', callback_data='start')
+            ]
+        ]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text="● ◌ ◌ ◌ ◌"
+        )
+        await query.message.edit_text(
+            text="● ● ◌ ◌ ◌"
+        )
+        await query.message.edit_text(
+            text="● ● ● ◌ ◌"
+        )
+        await query.message.edit_text(
+            text="● ● ● ● ◌"
+        )
+        await query.message.edit_text(
+            text="● ● ● ● ●"
+        )
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await client.edit_message_media(
+            query.message.chat.id, 
+            query.message.id, 
+            InputMediaPhoto(random.choice(DONATE))
+        )
+        await query.message.edit_text(
+            text=script.DNT_TXT,
+            reply_markup=reply_markup,
+            parse_mode=enums.ParseMode.HTML
+        )
     #add more callback
     elif query.data.startswith("setgs"):
         ident, set_type, status, grp_id = query.data.split("#")
