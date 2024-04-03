@@ -71,7 +71,7 @@ async def start(client, message):
             wishes = "Hᴀʀᴇ Kʀɪsʜɴᴀ 🙏\nGᴏᴏᴅ Nɪɢʜᴛ 🇮🇳"
         m=await message.reply_text("**Sᴛᴀʀᴛɪɴɢ.. ⏳**") 
         await asyncio.sleep(1.9)
-        await m.edit_text(f"**{wishes}**"")
+        await m.edit_text(f"**{wishes}**")
         await asyncio.sleep(2.5) 
         await m.delete()
         await message.reply_photo(
