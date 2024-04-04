@@ -56,13 +56,13 @@ current_time = datetime.datetime.utcnow() + datetime.timedelta(hours=5, minutes=
 current_hour = current_time.hour
 
 if 4 <= current_hour < 12:
-    wish = "Good Morning"
+    wish = "Gᴏᴏᴅ Mᴏʀɴɪɴɢ"
 elif 12 <= current_hour < 15:
-    wish = "Good Afternoon"
+    wish = "Gᴏᴏᴅ Aғᴛᴇʀɴᴏᴏɴ"
 elif 15 <= current_hour < 20:
-    wish = "Good Evening"
+    wish = "Gᴏᴏᴅ Eᴠᴇɴɪɴɢ"
 else:
-    wish = "Good Night"
+    wish = "Gᴏᴏᴅ Nɪɢʜᴛ"
 
 @Client.on_message(filters.group & filters.text & filters.incoming)
 async def give_filter(client, message):
@@ -99,9 +99,9 @@ async def pm_text(bot, message):
     await message.reply_text(
         text=f"<b>{wish}, {message.from_user.mention} Jɪ 😍\n\nɪ ᴄᴀɴᴛ ɢɪᴠᴇ ᴍᴏᴠɪᴇ ʜᴇʀᴇ\nʏᴏᴜ ᴄᴀɴ ʀᴇǫᴜᴇsᴛ <a href='t.me/swifthornrequest'>ʜᴇʀᴇ</a> ᴏʀ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴛᴏ ᴜsᴇ ᴍᴇ</b>",
         reply_markup=InlineKeyboardMarkup([
-            [InlineKeyboardButton("‼️ Rᴇǫᴜᴇsᴛ Mᴏᴠɪᴇ Hᴇʀᴇ ‼️", url=GRP_LNK)],
-            [InlineKeyboardButton("‼️ Cʜᴀɴɴᴇʟ ‼️", url=CHNL_LNK), InlineKeyboardButton("‼️ ᴅᴇᴠᴇʟᴏᴘᴇʀ ‼️", user_id=int(1782834874))],
-            [InlineKeyboardButton("Cʟᴏsᴇ 🔐", callback_data="close_data")]
+            [InlineKeyboardButton("⤪ Rᴇǫᴜᴇsᴛ Mᴏᴠɪᴇ Hᴇʀᴇ ⤨", url=GRP_LNK)],
+            [InlineKeyboardButton("⤪ Cʜᴀɴɴᴇʟ ⤨", url=CHNL_LNK), InlineKeyboardButton("⤪ ᴅᴇᴠᴇʟᴏᴘᴇʀ ⤨", user_id=int(1782834874))],
+            [InlineKeyboardButton("⤪ Cʟᴏsᴇ ⤨", callback_data="close_data")]
         ])
     )
     await bot.send_message(
