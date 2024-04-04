@@ -51,19 +51,18 @@ BUTTONS2 = {}
 SPELL_CHECK = {}
 # ENABLE_SHORTLINK = ""
 import datetime
-from datetime import datetime, timedelta
+
 current_time = datetime.datetime.utcnow() + datetime.timedelta(hours=5, minutes=30)
 current_hour = current_time.hour
 
 if 4 <= current_hour < 12:
-    wish = "Gᴏᴏᴅ Mᴏʀɴɪɴɢ"
+    wish = "Good Morning"
 elif 12 <= current_hour < 15:
-    wish = "Gᴏᴏᴅ Aғᴛᴇʀɴᴏᴏɴ"
+    wish = "Good Afternoon"
 elif 15 <= current_hour < 20:
-    wish = "Gᴏᴏᴅ Eᴠᴇɴɪɴɢ"
+    wish = "Good Evening"
 else:
-    wish = "Gᴏᴏᴅ Nɪɢʜᴛ"
-
+    wish = "Good Night"
 
 @Client.on_message(filters.group & filters.text & filters.incoming)
 async def give_filter(client, message):
