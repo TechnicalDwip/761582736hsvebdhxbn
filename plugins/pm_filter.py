@@ -2088,23 +2088,23 @@ async def cb_handler(client: Client, query: CallbackQuery):
             biisal_stream = f"{URL}watch/{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
             biisal_download = f"{URL}{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
 
-            xo = await query.message.reply_text(f'🔐')
-            await asyncio.sleep(1)
+            xo = await query.message.reply_text(f'**‼️ Link Generating Wait 5 seconds ‼️**')
+            await asyncio.sleep(5)
             await xo.delete()
 
             await log_msg.reply_text(
                 text=f"•• ʟɪɴᴋ ɢᴇɴᴇʀᴀᴛᴇᴅ ꜰᴏʀ ɪᴅ #{user_id} \n•• ᴜꜱᴇʀɴᴀᴍᴇ : {username} \n\n•• ᖴᎥᒪᗴ Nᗩᗰᗴ : {fileName}",
                 quote=True,
                 disable_web_page_preview=True,
-                reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("web Download", url=biisal_download),  # we download Link
-                                                    InlineKeyboardButton('▶Stream online', url=biisal_stream)]])  # web stream Link
+                reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔻 Download Now 🔺", url=biisal_download),  # we download Link
+                                                    InlineKeyboardButton('🔻 Play Now 🔺', url=biisal_stream)]])  # web stream Link
             )
             await query.message.reply_text(
-                text="•• ʟɪɴᴋ ɢᴇɴᴇʀᴀᴛᴇᴅ ☠︎⚔",
+                text="**‼️ Lɪɴᴋ Gᴇɴᴇʀᴀᴛᴇᴅ Sᴜᴄᴄᴇssғᴜʟʟʏ ‼️\n\nNᴏᴛᴇ : Lɪɴᴋ Vᴀʟɪᴅɪᴛʏ 𝟹 Dᴀʏs**",
                 quote=True,
                 disable_web_page_preview=True,
-                reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("web Download", url=biisal_download),  # we download Link
-                                                    InlineKeyboardButton('▶Stream online', url=biisal_stream)]])  # web stream Link
+                reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔻 Download Now 🔺", url=biisal_download),  # we download Link
+                                                    InlineKeyboardButton('🔻 Play Now🔺', url=biisal_stream)]])  # web stream Link
             )
         except Exception as e:
             print(e)  # print the error message
