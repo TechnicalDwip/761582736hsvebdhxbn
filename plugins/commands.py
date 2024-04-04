@@ -49,8 +49,8 @@ async def start(client, message):
         buttons = [[
             InlineKeyboardButton('❗Dɪsᴄʟᴀɪᴍᴇʀ❗', callback_data='disclaimer')
         ],[
-            InlineKeyboardButton('🔹Mᴏᴠɪᴇ Cʜᴀɴɴᴇʟ🔹', url="https://t.me/+8KKO8_lJaJAxNDk9"),
-            InlineKeyboardButton('🔹 Mᴏᴠɪᴇ Gʀᴏᴜᴘ 🔹', url='https://t.me/SwiftHornRequest')
+            InlineKeyboardButton('🔹Mᴏᴠɪᴇ Cʜᴀɴɴᴇʟ🔹', url=CHNL_LNK),
+            InlineKeyboardButton('🔹 Mᴏᴠɪᴇ Gʀᴏᴜᴘ 🔹', url=GRP_LNK)
         ],[
             InlineKeyboardButton('💸 ᴇᴀʀɴ ᴍᴏɴᴇʏ 💸', callback_data='earn'),
             InlineKeyboardButton('📚 Aʙᴏᴜᴛ 📚', callback_data='about')
@@ -114,8 +114,8 @@ async def start(client, message):
         buttons = [[
             InlineKeyboardButton('❗Dɪsᴄʟᴀɪᴍᴇʀ❗', callback_data='disclaimer')
         ],[
-            InlineKeyboardButton('🔹Mᴏᴠɪᴇ Cʜᴀɴɴᴇʟ🔹', url="https://t.me/+8KKO8_lJaJAxNDk9"),
-            InlineKeyboardButton('🔹 Mᴏᴠɪᴇ Gʀᴏᴜᴘ 🔹', url='https://t.me/SwiftHornRequest')
+            InlineKeyboardButton('🔹Mᴏᴠɪᴇ Cʜᴀɴɴᴇʟ🔹', url=CHNL_LNK),
+            InlineKeyboardButton('🔹 Mᴏᴠɪᴇ Gʀᴏᴜᴘ 🔹', url=GRP_LNK)
         ],[
             InlineKeyboardButton('💸 ᴇᴀʀɴ ᴍᴏɴᴇʏ 💸', callback_data='earn'),
             InlineKeyboardButton('📚 Aʙᴏᴜᴛ 📚', callback_data='about')
