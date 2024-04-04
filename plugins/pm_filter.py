@@ -64,62 +64,46 @@ elif 15 <= current_hour < 20:
 else:
     wish = "Gᴏᴏᴅ Nɪɢʜᴛ"
 
-@Client.on_message(filters.group & filters.text & filters.incoming)
+REACTIONS = ["❤️", "😊", "😍", "😘", "😉", "😎", "🥰", "😇", "🤩", "😌", "😀", "😃", "😄", "😁", "😆", "😅", "🤣", "😊", "😋", "😚", "😙", "😛", "😜", "😝", "🤗", "😏", "😶", "😐", "😑", "😒", "🙃", "😬", "🤐", "😔", "😕", "🙁", "☹️", "😖", "😞", "😟", "😢", "😭", "😦", "😧", "😨", "😩", "😰", "😳", "😵", "😷", "🤒", "🤕", "😪", "😴", "😌", "😓", "😫", "🥱", "😋", "😎", "🤓", "🧐", "😮", "😯", "😲", "😳", "🥺", "😦", "😧", "😨", "😥", "😢", "😭", "😖", "😣", "😞", "😓", "😩", "😫", "😤"]
+
+@Client.on_message(filters.group | filters.private & filters.text & filters.incoming)
 async def give_filter(client, message):
+    await message.react(random.choice(REACTIONS))
     if message.chat.id != SUPPORT_CHAT_ID:
-        glob = await global_filters(client, message)
-        if glob == False:
-            manual = await manual_filters(client, message)
-            if manual == False:
+        manual = await manual_filters(client, message)
+        if not manual:
+            settings = await get_settings(message.chat.id)
+            try:
+                if settings['auto_ffilter']:
+                    await auto_filter(client, message)
+            except KeyError:
+                grpid = await active_connection(str(message.from_user.id))
+                await save_group_settings(grpid, 'auto_ffilter', True)
                 settings = await get_settings(message.chat.id)
-                try:
-                    if settings["auto_ffilter"]:
-                        await auto_filter(client, message)
-                except KeyError:
-                    grpid = await active_connection(str(message.from_user.id))
-                    await save_group_settings(grpid, "auto_ffilter", True)
-                    settings = await get_settings(message.chat.id)
-                    if settings["auto_ffilter"]:
-                        await auto_filter(client, message)
-                    else:
-                        search = message.text
-                        temp_files, temp_offset, total_results = await get_search_results(
-                            chat_id=message.chat.id, query=search.lower(), offset=0, filter=True
-                        )
-                        if total_results == 0:
-                            return
-                        else:
-                            reply_message = await message.reply_text(
-                                text=f"<b>Hᴇʏ ᴅᴇᴀʀ {message.from_user.mention}, {str(total_results)} ʀᴇsᴜʟᴛs ᴀʀᴇ ғᴏᴜɴᴅ ɪɴ ᴍʏ ᴅᴀᴛᴀʙᴀsᴇ ғᴏʀ ʏᴏᴜʀ ᴏ̨ᴜᴇʀʏ : {search}\n\nᴊᴏɪɴ ᴏᴜʀ ᴍᴏᴠɪᴇ sᴇᴀʀᴄʜ ɢʀᴏᴜᴘ ᴛᴏ ɢᴇᴛ ʏᴏᴜʀ ғɪʟᴇs.\nTʜɪs ɪs ᴀ ᴅɪsᴄᴜssɪᴏɴ ɢʀᴏᴜᴘ sᴏ ᴛʜᴀᴛ ʏᴏᴜ ᴄᴀɴ'ᴛ Gᴇᴛ ғɪʟᴇs ғʀᴏᴍ ʜᴇʀᴇ...\n\nहमारे ग्रुप ज्वाइन करे</b>",
-                                reply_markup=InlineKeyboardMarkup(
-                                    [
-                                        [
-                                            InlineKeyboardButton(
-                                                "Mᴏᴠɪᴇ Gʀᴏᴜᴘ 🤡",
-                                                url=GRP_LNK,
-                                            )
-                                        ]
-                                    ]
-                                ),
-                                parse_mode=enums.ParseMode.HTML,
-                            )
-                            
-                            await asyncio.sleep(4 * 60)
-                            await reply_message.delete()
-
-
+                if settings.get('auto_ffilter'):
+                    await auto_filter(client, message) 
+    else:
+        search = message.text
+        temp_files, temp_offset, total_results = await get_search_results(chat_id=message.chat.id, query=search.lower(), offset=0, filter=True)
+        if total_results == 0:
+            return
+        else:
+            await message.reply_text(f"<b>ʜᴇʏ {message.from_user.mention},\n\nʏᴏᴜʀ ʀᴇ𝚀ᴜᴇꜱᴛ ꜰɪʟᴇ <code>{search}</code> ɪꜱ ᴀʟʀᴇᴀᴅʏ ᴀᴠᴀɪʟᴀʙʟᴇ ɪɴ ᴏᴜʀ ᴍᴏᴠɪᴇ ꜱᴇᴀʀᴄʜ ɢʀᴏᴜᴘ ✅</b>\n\n<b>‼️ ᴛʜɪs ɪs ᴀ <u>ᴍᴏᴠɪᴇ ʀᴇ𝚀ᴜᴇꜱᴛ ɢʀᴏᴜᴘ</u> sᴏ ᴛʜᴀᴛ ʏᴏᴜ ᴄᴀɴ'ᴛ ɢᴇᴛ ꜰɪʟᴇs ꜰʀᴏᴍ ʜᴇʀᴇ...\n\n📝 ꜱᴇᴀʀᴄʜ ɪɴ ᴍᴏᴠɪᴇ ꜱᴇᴀʀᴄʜ ɢʀᴏᴜᴘ : 👇</b>",   
+                                    reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📝 ᴍᴏᴠɪᴇ ꜱᴇᴀʀᴄʜ ɢʀᴏᴜᴘ ", url=GRP_LINK)]]))
+            return
 
 @Client.on_message(filters.private & filters.text & filters.incoming)
 async def pm_text(bot, message):
     content = message.text
     user = message.from_user.first_name
     user_id = message.from_user.id
+    await message.react(random.choice(REACTIONS))
     if content.startswith("/") or content.startswith("#"):
         return  # ignore commands and hashtags
     if user_id in ADMINS:
         return  # ignore admins
     await message.reply_text(
-        text=f"<b>{wish}, {message.from_user.mention} Jɪ 😍\n\nɪ ᴄᴀɴᴛ ɢɪᴠᴇ ᴍᴏᴠɪᴇ ʜᴇʀᴇ\nʏᴏᴜ ᴄᴀɴ ʀᴇǫᴜᴇsᴛ <a href='t.me/swifthornrequest'>ʜᴇʀᴇ</a> ᴏʀ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴛᴏ ᴜsᴇ ᴍᴇ</b>",
+        text=f"<b>ʜᴇʏ {user} ,\n\nɪ ᴀᴍ ɴᴏᴛ ᴡᴏʀᴋɪɴɢ ɪɴ ᴘᴍ sᴏ ʏᴏᴜ ᴄᴀɴ'ᴛ ɢᴇᴛ ᴍᴏᴠɪᴇs ꜰʀᴏᴍ ʜᴇʀᴇ. ꜱᴇᴀʀᴄʜ ɪᴛ ɪɴ ᴏᴜʀ ᴍᴏᴠɪᴇ ꜱᴇᴀʀᴄʜ ɢʀᴏᴜᴘ ʙʏ ᴄʟɪᴄᴋɪɴɢ ᴏɴ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴ 👇</b>",
         reply_markup=InlineKeyboardMarkup([
             [InlineKeyboardButton("⤪ Rᴇǫᴜᴇsᴛ Mᴏᴠɪᴇ Hᴇʀᴇ ⤨", url=GRP_LNK)],
             [InlineKeyboardButton("⤪ Cʜᴀɴɴᴇʟ ⤨", url=CHNL_LNK), InlineKeyboardButton("⤪ ᴅᴇᴠᴇʟᴏᴘᴇʀ ⤨", user_id=int(1782834874))],
@@ -134,6 +118,7 @@ async def pm_text(bot, message):
         ])
     )
     
+
 @Client.on_callback_query(filters.regex(r"^next"))
 async def next_page(bot, query):
     ident, req, key, offset = query.data.split("_")
