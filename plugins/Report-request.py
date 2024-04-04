@@ -2,7 +2,9 @@ from pyrogram import Client, filters
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from info import LOG_CHANNEL
 
-@Client.on_message(filters.command("request", prefixes="/") & ~filters.edited)
+app = Client("movie_bot")
+
+@app.on_message(filters.command("request", prefixes="/") & ~filters.edited)
 async def request_movie(client, message: Message):
     if len(message.command) == 1:
         await message.reply("Wrong format! Use correct format: /request {movie_name}")
@@ -20,7 +22,7 @@ async def request_movie(client, message: Message):
         await client.send_message("LOG_CHANNEL", text=content, reply_markup=keyboard)
 
 
-@Client.on_callback_query()
+@app.on_callback_query()
 async def handle_button_click(client, callback_query):
     action, movie_name = callback_query.data.split()
     
