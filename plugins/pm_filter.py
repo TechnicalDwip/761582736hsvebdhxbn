@@ -85,14 +85,19 @@ async def pm_text(bot, message):
         return  # ignore admins
     await message.reply_text(
         text=f"<b>Nᴀᴍᴀsᴛʜᴇ {message.from_user.mention} Jɪ 😍 ,\n\nɪ ᴄᴀɴᴛ ɢɪᴠᴇ ᴍᴏᴠɪᴇ ʜᴇʀᴇ\nʏᴏᴜ ᴄᴀɴ ʀᴇǫᴜᴇsᴛ <a href='t.me/swifthornrequest'>ʜᴇʀᴇ</a> ᴏʀ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴛᴏ ᴜsᴇ ᴍᴇ</b>",
-        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Rᴇǫᴜᴇsᴛ Hᴇʀᴇ", url=f"https://t.me/swifthornrequest")]])
-    )
-    await bot.send_message(
+        reply_markup=InlineKeyboardMarkup([
+            [InlineKeyboardButton("‼️ Rᴇǫᴜᴇsᴛ Mᴏᴠɪᴇ Hᴇʀᴇ ‼️", url=)],
+            [InlineKeyboardButton("‼️ Cʜᴀɴɴᴇʟ ‼️", url=), InlineKeyboardButton("‼️ ᴅᴇᴠᴇʟᴏᴘᴇʀ ‼️", user_id=int(1782834874))],
+            [InlineKeyboardButton("Cʟᴏsᴇ 🔐", callback_data="close_data")]
+        ])
+        await bot.send_message(
         chat_id=LOG_CHANNEL,
-        text=f"<b>#𝐏𝐌_𝐌𝐒𝐆\n\nNᴀᴍᴇ : {user}\n\nID : {user_id}\n\nMᴇssᴀɢᴇ : {content}</b>"
+        text=f"<b>#𝐏𝐌_𝐌𝐒𝐆\n\nNᴀᴍᴇ : {user}\n\nID : {user_id}\n\nMᴇssᴀɢᴇ : {content}</b>",
+        reply_markup=InlineKeyboardMarkup([
+            [InlineKeyboardButton("Close 🔐", callback_data="close_data")]
+        ])
     )
-
-
+    
 @Client.on_callback_query(filters.regex(r"^next"))
 async def next_page(bot, query):
     ident, req, key, offset = query.data.split("_")
