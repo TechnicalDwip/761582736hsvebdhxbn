@@ -3,7 +3,6 @@
 # Ask Doubt on telegram @KingVJ01
 
 # Kanged From @TroJanZheX
-import datetime
 import asyncio
 import re
 import ast
@@ -51,6 +50,8 @@ BUTTONS1 = {}
 BUTTONS2 = {}
 SPELL_CHECK = {}
 # ENABLE_SHORTLINK = ""
+import datetime
+from datetime import datetime, timedelta
 current_time = datetime.datetime.utcnow() + datetime.timedelta(hours=5, minutes=30)
 current_hour = current_time.hour
 
