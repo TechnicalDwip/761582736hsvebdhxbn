@@ -1,30 +1,35 @@
-import asyncio
-import os
-from pyrogram import filters, enums, Client 
+from pyrogram import Client, filters
+from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
+from info import LOG_CHANNEL
 
-@Client.on_message((filters.command(["request_movie"]) | filters.regex("@request") | filters.regex("@need")) & filters.group)
-async def report_user(bot, message):
-    if message.reply_to_message:
-        chat_id = message.chat.id
-        reporter = str(message.from_user.id)
-        mention = message.from_user.mention
-        success = True
-        report = f"Rᴇᴩᴏʀᴛᴇʀ : {mention} ({reporter})" + "\n"
-        report += f"Mᴇssᴀɢᴇ : {message.reply_to_message.link}"
-        # Using latest pyrogram's enums to filter out chat administrators
-        async for admin in bot.get_chat_members(chat_id=message.chat.id, filter=enums.ChatMembersFilter.ADMINISTRATORS):
-            if not admin.user.is_bot: # Filtering bots and prevent sending message to bots | Message will be send only to user admins
-                try:
-                    reported_post = await message.reply_to_message.forward(admin.user.id)
-                    await reported_post.reply_text(
-                        text=report,
-                        chat_id=admin.user.id,
-                        disable_web_page_preview=True
-                    )
-                    success = True
-                except:
-                    pass
-            else: # Skipping Bots
-                pass
-        if success:
-            await message.reply_text("**‼️ Movie Request Send To Admin ‼️**")
+@app.on_message(filters.command("request", prefixes="/") & ~filters.edited)
+async def request_movie(client, message: Message):
+    if len(message.command) == 1:
+        await message.reply("Wrong format! Use correct format: /request {movie_name}")
+    else:
+        await message.reply("movie request send successfully")
+        movie_name = " ".join(message.command[1:])
+        content = f"Movie name: {movie_name}\nRequested by: {message.from_user.mention}"
+        buttons = [
+            InlineKeyboardButton("Available", callback_data="movie_available"),
+            InlineKeyboardButton("Not Available", callback_data="movie_not_available"),
+            InlineKeyboardButton("Not Released Yet", callback_data="movie_not_released"),
+            InlineKeyboardButton("Mark as Done", callback_data="close_data")
+        ]
+        keyboard = InlineKeyboardMarkup([buttons])
+        await client.send_message("LOG_CHANNEL", text=content, reply_markup=keyboard)
+
+
+@app.on_callback_query()
+async def handle_button_click(client, callback_query):
+    action, movie_name = callback_query.data.split()
+    
+    if data == "movie_available":
+        await callback_query.answer()
+        await client.send_message(callback_query.from_user.id, f"{movie_name} is now available.")
+    elif data == "movie_not_available":
+        await callback_query.answer()
+        await client.send_message(callback_query.from_user.id, f"{movie_name} is not available.")
+    elif data == "movie_not_released":
+        await callback_query.answer()
+        await client.send_message(callback_query.from_user.id, f"{movie_name} has not been released yet.")
