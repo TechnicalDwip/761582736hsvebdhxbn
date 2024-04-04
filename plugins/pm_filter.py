@@ -3,6 +3,7 @@
 # Ask Doubt on telegram @KingVJ01
 
 # Kanged From @TroJanZheX
+import datetime
 import asyncio
 import re
 import ast
@@ -50,6 +51,18 @@ BUTTONS1 = {}
 BUTTONS2 = {}
 SPELL_CHECK = {}
 # ENABLE_SHORTLINK = ""
+current_time = datetime.datetime.utcnow() + datetime.timedelta(hours=5, minutes=30)
+current_hour = current_time.hour
+
+if 4 <= current_hour < 12:
+    wish = "Gᴏᴏᴅ Mᴏʀɴɪɴɢ"
+elif 12 <= current_hour < 15:
+    wish = "Gᴏᴏᴅ Aғᴛᴇʀɴᴏᴏɴ"
+elif 15 <= current_hour < 20:
+    wish = "Gᴏᴏᴅ Eᴠᴇɴɪɴɢ"
+else:
+    wish = "Gᴏᴏᴅ Nɪɢʜᴛ"
+
 
 @Client.on_message(filters.group & filters.text & filters.incoming)
 async def give_filter(client, message):
